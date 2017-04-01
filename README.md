@@ -6,24 +6,24 @@ The overall goal of this schema is provide programatic access and return for a v
 
 The overall input *requires* the following fields:
   - `molecule` (dict) - A JSON object that defines a given molecule (see below)
-  - `driver` (str) - The requirested funciton to run (`energy`, `gradient`, etc). The following are explicitly defined;
-    however, individual programs may define as others as necessary:
+  - `driver` (str) - The requested function to run (`energy`, `gradient`, etc). The following are explicitly defined;
+    however, individual programs may define as others as necessary. Return value listed:
     - `energy` - The energy of the requested method.
     - `gradient` - The gradient of the requested method.
     - `hessian` - The Hessian of the requested method.
-    - `optimize` - The moleucle specification of the optimized geometry of the requested method.
+    - `optimize` - The molecule specification of the optimized geometry of the requested method.
     - `frequency` - List of frequencies (in hartree) of the requested method.
   - `method` (str) - The requested method and basis seperated by a slash (`SCF/cc-pVDZ`, `B3LYP/sto-3g`, `MP2/def2-SVP`, etc)
-    -  Alternatively if a complex basis is supplied a user can provide a key to another options field. For example,
-    `SCF/key=mybasis` where `mybasis` is a nother field in the supplied JSON which is likely a list of strings
+    -  Alternatively if a complex basis is supplied, a user can provide a key to another options field. For example,
+    `SCF/key=mybasis` where `mybasis` is another field in the supplied JSON which is likely a list of strings
     `["sto-3g", "cc-pVDZ", ...]`, one for each atom in the molecule specification.
   - `options` (dict) - A dictionary of the requested generic options.
     - Note that this can be "blank": `json_data["options"] = {}`.
 
 This spec also supports unlimited extra fields that a specific program may or may not support.
 This is enabled to allow for "passthough" that is any part of the JSON not specified can simply
-pass through the specification and provided in the return allowing for extra comments or validation
-to be applied ontop of the exisiting value.
+pass through the specification and provided in the return, allowing for extra comments or validation
+to be applied on top of the existing value.
 
 ## Output
 
