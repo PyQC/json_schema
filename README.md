@@ -30,19 +30,19 @@ to be applied on top of the existing value.
 The following molecule specification is used. The required fields are:
 
   - `symbols` (list) - A list of strings 
-  - 'geometry' (list) - A (N, 3) XYZ coordinate list of list in bohr
+  - `geometry` (list) - A (N, 3) XYZ coordinate list of list in bohr
 
 The following are optional fields and default values:
 
-  - `name` (str, "") - The name of the molecule
-  - `charge` (float, 0.0) - The overall charge of the molecule
-  - `multiplicity` (int, 1)- The overall mulitiplicity of the molecule.
-  - `real` (list of bool, [True, ...]) - A list describing if the atoms are real or ghost.
+  - `name` (str, `""`) - The name of the molecule
+  - `charge` (float, `0.0`) - The overall charge of the molecule
+  - `multiplicity` (int, `1`)- The overall mulitiplicity of the molecule.
+  - `real` (list of bool, `[True, ...]`) - A list describing if the atoms are real or ghost.
   - `comment` (str) - Any additional comment one would attach to the molecule.
-  - `fragments` (list, []) - A list of starting and stopping indices (0-indexed) for molecular fragments.
-  - `fragment_charges` (list, []) - A list of charges associated with the fragments tuple.
-  - `fragment_multiplicities` (list, []) - A list of multiplicites associated with each fragment. 
-  - `provenance` (dict, {}) - The provencance of the molecule.
+  - `fragments` (list, `[]`) - A list of starting and stopping indices (0-indexed) for molecular fragments.
+  - `fragment_charges` (list, `[]`) - A list of charges associated with the fragments tuple.
+  - `fragment_multiplicities` (list, `[]`) - A list of multiplicites associated with each fragment. 
+  - `provenance` (dict, `{}`) - The provencance of the molecule.
     - `doi` - ??
 
 ## Output
