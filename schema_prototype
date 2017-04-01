@@ -1,0 +1,59 @@
+# CP corrected Helium dimer energy in the STO-3G basis.
+>>> json_data = {}
+
+>>> json_data["molecule"] = "He 0 0 0\n--\nHe 0 0 1"  # JSON format
+>>> json_data["driver"] = "energy"                    # Can be anything (5 specified)
+>>> json_data["method"] = "SCF"                       # SCF/cc-pvdz, SCF/key=mybasis
+>>> json_data["options"] = {"BASIS": "STO-3G"}        # Generic options
+
+# optional specs
+>>> json_data["horton_options"] = {"BASIS": "STO-3G"} # Pass through options 
+
+# Results
+# return_value, variables, link_to_spec
+
+# Other results
+# success, error, provenance, raw_output
+
+>>> run_json(json_data)
+{
+    "raw_output": "Output storing was not requested.",
+    "options": {
+        "BASIS": "STO-3G"
+    },
+    "driver": "energy",
+    "molecule": "He 0 0 0\n--\nHe 0 0 1",
+    "method": "SCF",
+    "variables": {
+        "SCF N ITERS": 2.0,
+        "SCF DIPOLE Y": 0.0,
+        "CURRENT DIPOLE Y": 0.0,
+        "CP-CORRECTED 2-BODY INTERACTION ENERGY": 0.1839360538612116,
+        "HF TOTAL ENERGY": -5.433191881443323,
+        "SCF TOTAL ENERGY": -5.433191881443323,
+        "TWO-ELECTRON ENERGY": 4.124089347186247,
+        "SCF ITERATION ENERGY": -5.433191881443323,
+        "CURRENT DIPOLE X": 0.0,
+        "CURRENT DIPOLE Z": 0.0,
+        "CURRENT REFERENCE ENERGY": -5.433191881443323,
+        "CURRENT ENERGY": 0.1839360538612116,
+        "COUNTERPOISE CORRECTED TOTAL ENERGY": -5.433191881443323,
+        "SCF DIPOLE Z": 0.0,
+        "COUNTERPOISE CORRECTED INTERACTION ENERGY": 0.1839360538612116,
+        "NUCLEAR REPULSION ENERGY": 2.11670883436,
+        "SCF DIPOLE X": 0.0,
+        "ONE-ELECTRON ENERGY": -11.67399006298957
+    },
+    "return_value": 0.1839360538612116,
+    "error": "",
+    "success": true,
+    "provenance": {
+        "creator": "Psi4",
+        "routine": "psi4.run_json",
+        "version": "1.1a1"
+    },
+    "kwargs": {
+        "bsse_type": "cp"
+    }
+}
+"""
