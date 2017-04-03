@@ -64,7 +64,7 @@ def to_pyscf_rawinput(jdic, mol):
         rawinp.append('import pyscf.ci')
 
     rawinp.extend(['result_dic = {}',
-                   'pyscf.gto.loads(\"\"\"%s\"\"\")' % mol.dumps(),
+                   'pyscf.gto.unpack(%s)' % mol.pack(),
                    'mol.verbose = 4',
                    'mol.stdout = StringIO.StringIO()',
                   ])
